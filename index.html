@@ -10,7 +10,17 @@
 </head>
 
 <body ng-app>
-    <input type="text" ng-model="myname">{{myname}}
+
+    Name: <input type="text" ng-model="myname">
+    <div ng-hide="toggler">
+        Your Input : {{myname}}
+    </div>
+    <div>
+        Check to Hide: <input type="checkbox" name="showOrHide" id="showOrHide" ng-model="toggler">
+    </div>
+
+
+
 </body>
 
 </html>
