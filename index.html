@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 
-<body ng-init="myname='Jerry';toggler='false'">
+<body ng-init="myname='Jerry';toggler=false">
 
     Name: <input type="text" ng-model="myname">
     <div ng-hide="toggler">
@@ -18,7 +18,7 @@
     <div>
         Check to Hide: <input type="checkbox" name="showOrHide" id="showOrHide" ng-model="toggler">
     </div>
-
+    <button ng-click="myname='Rohit'">Change name  to Rohit </button>
 
 
 </body>
