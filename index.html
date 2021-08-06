@@ -5,19 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" href="./index.css">
     <title>Document</title>
 </head>
 
-<body ng-init="myname='Jerry';toggler=false">
+<body ng-init="myname='Jerry';toggler=false;fontColor={red: 'danger',blue: 'primary',orange:'warning'}">
     <!--initialized varibles with default values using ng-init-->
 
     Name: <input type="text" ng-model="myname">
     <!--using ng-model to bind 2 ways for value of checkbox-->
-    <div ng-hide="toggler" ng-cloak>
+    <div ng-hide="toggler" ng-cloak ng-class="fontColor.orange">
         <!--ng-cloak set display of container to hidden until the entire angularjs is loaded up and curly braces are understood by browers as how to render rather than just displaying sqigly braces for a flicker-->
         Your Input : {{myname}}
     </div>
+    <div ng-show="toggler" ng-class="fontColor.red"> Click Checkbox to view </div>
     <div>
         Check to Hide: <input type="checkbox" name="showOrHide" id="showOrHide" ng-model="toggler">
         <!--using ng-model to bind 2 ways for value of checkbox-->
@@ -29,8 +30,9 @@
     </div>
     <div>
         <!--ng-switch-->
-        <p>Show one of many sentences: (enter a/b/c) </p><input type="text" ng-model="switchings">
+        <p ng-class="fontColor.blue">Show one of many sentences: (enter a/b/c) </p><input type="text" ng-model="switchings">
         <div ng-switch on="switchings">
+            <p ng-switch-default><big>Please Sign-up</big></p>
             <p ng-switch-when="a"><strong>You are not Logged in</strong></p>
             <p ng-switch-when="b" t><i>You are Logged in</i></p>
             <p ng-switch-when="c"><big>You are Logged out</big></p>
