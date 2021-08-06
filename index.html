@@ -5,24 +5,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
     <title>Document</title>
 </head>
 
 <body ng-init="myname='Jerry';toggler=false">
+    <!--initialized varibles with default values using ng-init-->
 
     Name: <input type="text" ng-model="myname">
-    <div ng-hide="toggler">
+    <!--using ng-model to bind 2 ways for value of checkbox-->
+    <div ng-hide="toggler" ng-cloak>
+        <!--ng-cloak set display of container to hidden until the entire angularjs is loaded up and curly braces are understood by browers as how to render rather than just displaying sqigly braces for a flicker-->
         Your Input : {{myname}}
     </div>
     <div>
         Check to Hide: <input type="checkbox" name="showOrHide" id="showOrHide" ng-model="toggler">
+        <!--using ng-model to bind 2 ways for value of checkbox-->
     </div>
     <button ng-click="myname='Rohit'">Change name  to Rohit </button>
     <div>
         <span>alternate way to display dynamic data in addition to ng-model is ng-bind : </span><strong ng-bind="myname"></strong>
+        <!--space inside tags gets replaced by value ng-bind is binded to-->
     </div>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 </body>
 
 </html>
