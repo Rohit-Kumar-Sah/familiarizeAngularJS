@@ -27,6 +27,18 @@
         <span>alternate way to display dynamic data in addition to ng-model is ng-bind : </span><strong ng-bind="myname"></strong>
         <!--space inside tags gets replaced by value ng-bind is binded to-->
     </div>
+    <div>
+        <!--ng-switch-->
+        <p>Show one of many sentences: (enter a/b/c) </p><input type="text" ng-model="switchings">
+        <div ng-switch on="switchings">
+            <p ng-switch-when="a"><strong>You are not Logged in</strong></p>
+            <p ng-switch-when="b" t><i>You are Logged in</i></p>
+            <p ng-switch-when="c"><big>You are Logged out</big></p>
+        </div>
+    </div>
+
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 </body>
 
