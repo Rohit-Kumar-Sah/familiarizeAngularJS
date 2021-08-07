@@ -12,7 +12,7 @@ function MyController($scope) {
 
     $scope.intro = "Getting started with Controllers";
 
-    function btn1Clicked() {
+    #scope.btn1Clicked = function() {
         alert("Button 1 click handled in controller");
     }
 }
