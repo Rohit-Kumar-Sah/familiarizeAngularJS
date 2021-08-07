@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="StudentApp">
 
 <head>
     <meta charset="UTF-8">
@@ -161,11 +161,44 @@
     <script src="./controllers/ControllerAs.js"></script>
     -->
 
+    <p> Getting started with Controllers </p>
+
+    <div class="hiFlex">
+
+        <div ng-controller="StudentController1" class="distance">
+            <h3>
+                {{intro}}
+            </h3>
+
+            <button ng-click="btnClicked()">Button 1</button>
+        </div>
+
+        <div ng-controller="StudentController2" class="distance">
+            <h3>
+                {{intro}}
+            </h3>
+
+            <button ng-click="btnClicked()">Button 2</button>
+        </div>
+
+        <div ng-controller="StudentController3" class="distance">
+            <h3>
+                {{intro}}
+            </h3>
+
+            <button ng-click="btnClicked()">Button 3</button>
+        </div>
+    </div>
+
+
+
 
 
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js "></script>
+    <script src="./app.js"></script>
+    <script src="./controllers/StudentController.js"></script>
 </body>
 
 </html>

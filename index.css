@@ -14,13 +14,14 @@
     display: flex;
 }
 
-.Filters {
+.Filters,
+.distance {
     margin: 10px 0 0 50px;
 }
 
 table {
     background-color: silver;
-    margin: 20px 0;
+    margin: 20px 0px;
 }
 
 tr:nth-child(odd) {
@@ -30,4 +31,8 @@ tr:nth-child(odd) {
 td {
     min-width: 200px;
     text-align: center;
+}
+
+.hiFlex {
+    display: flex;
 }
