@@ -77,14 +77,15 @@
 
         <!--Array of Objects-->
         <div class="PipesFilters">
-            <table ng-init="StudentAO=[{name:'ana1',dept: 'CSE'},{name:'bana2',dept: 'CSE'},{name:'cana',dept: 'CSE'}] ">
+            <table ng-init="StudentAO=[{name:'ana1',dept: 'IT'},{name:'bana2',dept: 'ECE'},{name:'cana',dept: 'CSE'}] ">
 
                 <caption>Array of Objects </caption>
-                <tr>
-                    <th>Name</th>
-                    <th>Dept</th>
+                <tr style="cursor: pointer;">
+                    <th ng-click="considerMe='name'; reverse=!reverse">Name <sub><small>(Click to order)</small></sub></th>
+                    <th ng-click="considerMe='dept'; reverse=!reverse">Dept <sub><small>(Click to order)</small></sub></th>
                 </tr>
-                <tr ng-repeat="student in StudentAO | filter:{name: filterB}">
+                <!--ng-click detects the column clicked and evaluates the expression within. the orderBy pipe knows the values of variable 'considerMe' & 'reverse' . The reverse param acts as toggler for ASC/DESC sorting-->
+                <tr ng-repeat="student in StudentAO | filter:{name: filterB} | orderBy:considerMe:reverse">
                     <!--Sticking to for in loop is recommended-->
                     <td>{{student.name}}</td>
                     <td>{{student.dept}}</td>
@@ -100,15 +101,15 @@
 
         <!--Array of arrays-->
         <div class="PipesFilters">
-            <table ng-init="StudentArr=[['ame','dept',20.00, 2021-01-10],['bme2','dept2',210.00, 2021-11-10],['cme2','dept3',300.10, 1999-01-10]]">
+            <table ng-init="StudentArr=[['ame','dept',20.00, '2021-01-10'],['bme2','dept2',210.00, '2021-11-10'],['cme2','dept3',300.10, '1999-01-10']]">
                 <caption>Array of arrays </caption>
                 <tr>
                     <th>Name</th>
                     <th>Dept</th>
                     <th>Money</th>
-                    <th>Date</th>
+                    <th>Date </th>
                 </tr>
-                <tr ng-repeat="student in StudentArr | filter: filterC">
+                <tr ng-repeat="student in StudentArr | filter: filterC ">
                     <!--Sticking to for in loop is recommended-->
                     <td>{{student[0] | lowercase }}</td>
                     <td>{{student[1] | uppercase}}</td>
@@ -116,14 +117,14 @@
                     <td>{{student[3] | date}}</td>
                 </tr>
             </table>
-            <div class="Filters">
+            <div class="Filters ">
                 <p>Filter this Entire table </p>
-                <input type="text" ng-model="filterC">
+                <input type="text " ng-model="filterC ">
             </div>
         </div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js "></script>
 </body>
 
 </html>
