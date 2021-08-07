@@ -47,6 +47,76 @@
         </ul>
     </div>
 
+    <div>
+        <p>Using Pipes & Filters</p>
+
+
+        <!--Object of Objects-->
+        <div class="PipesFilters">
+            <table ng-init="StudentObj={here:{name:'ana',dept: 'CSE'},there:{name:'bana',dept: 'CSE'},the:{name:'cana',dept: 'CSE'}} ">
+                <caption> Object of Objects </caption>
+                <tr>
+                    <th>Name</th>
+                    <th>Dept</th>
+                </tr>
+                <tr ng-repeat="student in StudentObj">
+                    <!--Sticking to for in loop is recommended-->
+                    <td>{{student.name}}</td>
+                    <td>{{student.dept}}</td>
+                </tr>
+            </table>
+
+            <div class="Filters">
+                <p>Filter this table on name: </p>
+                <input type="text">
+            </div>
+        </div>
+
+
+
+        <!--Array of Objects-->
+        <div class="PipesFilters">
+            <table ng-init="StudentObj=[{name:'ana',dept: 'CSE'},{name:'bana',dept: 'CSE'},{name:'cana',dept: 'CSE'}] ">
+
+                <caption>Array of Objects </caption>
+                <tr>
+                    <th>Name</th>
+                    <th>Dept</th>
+                </tr>
+                <tr ng-repeat="student in StudentObj">
+                    <!--Sticking to for in loop is recommended-->
+                    <td>{{student.name}}</td>
+                    <td>{{student.dept}}</td>
+                </tr>
+            </table>
+            <div class="Filters">
+                <p>Filter this table on name: </p>
+                <input type="text">
+            </div>
+        </div>
+
+
+
+        <!--Array of arrays-->
+        <div class="PipesFilters">
+            <table ng-init="StudentArr=[['ame','dept'],['bme2','dept2'],['cme2','dept3']]">
+                <caption>Array of arrays </caption>
+                <tr>
+                    <th>Name</th>
+                    <th>Dept</th>
+                </tr>
+                <tr ng-repeat="student in StudentArr">
+                    <!--Sticking to for in loop is recommended-->
+                    <td>{{student[0]}}</td>
+                    <td>{{student[1]}}</td>
+                </tr>
+            </table>
+            <div class="Filters">
+                <p>Filter this table on name: </p>
+                <input type="text">
+            </div>
+        </div>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 </body>
