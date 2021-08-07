@@ -100,16 +100,20 @@
 
         <!--Array of arrays-->
         <div class="PipesFilters">
-            <table ng-init="StudentArr=[['ame','dept'],['bme2','dept2'],['cme2','dept3']]">
+            <table ng-init="StudentArr=[['ame','dept',20.00, 2021-01-10],['bme2','dept2',210.00, 2021-11-10],['cme2','dept3',300.10, 1999-01-10]]">
                 <caption>Array of arrays </caption>
                 <tr>
                     <th>Name</th>
                     <th>Dept</th>
+                    <th>Money</th>
+                    <th>Date</th>
                 </tr>
                 <tr ng-repeat="student in StudentArr | filter: filterC">
                     <!--Sticking to for in loop is recommended-->
-                    <td>{{student[0]}}</td>
-                    <td>{{student[1]}}</td>
+                    <td>{{student[0] | lowercase }}</td>
+                    <td>{{student[1] | uppercase}}</td>
+                    <td>{{student[2] | currency:'Rs '}}</td>
+                    <td>{{student[3] | date}}</td>
                 </tr>
             </table>
             <div class="Filters">
