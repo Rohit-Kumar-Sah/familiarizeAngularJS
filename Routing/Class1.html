@@ -12,6 +12,11 @@
     <div ng-controller="SubjectController">
         {{title}}
     </div>
+    <hr>
+    <ng-view></ng-view>
+    <button> <a ng-href="#/semesters/1">SEMESTER 1</a></button>
+    <button> <a ng-href="#/semesters/2">SEMESTER 2</a></button>
+
 
     <!--AngularJS-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js "></script>
@@ -21,6 +26,8 @@
     <script src="./app.js"></script>
     <!--our controller file -->
     <script src="./controllers/Subject.js"></script>
+    <script src="./controllers/year1.js"></script>
+    <script src="./controllers/semesters.js"></script>
 
 </body>
 
