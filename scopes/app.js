@@ -22,5 +22,13 @@
                 template: "<p>this is {{gettingfromparent1}} using alias.</p> this is {{gettingfromparent2}} without alias."
             }
         });
+        angular.module('scopesapp').directive('equalToLocalScope', function() {
+            return {
+                scope: {
+                    willchange: '='
+                },
+                template: "<p > local scope \"=\" : {{willchange}}.</p><button ng-click=\"willchange='overridden by child'\">Click to let child override itself and parent too</button>"
+            }
+        });
     }
 )();

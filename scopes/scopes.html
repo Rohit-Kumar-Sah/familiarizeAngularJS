@@ -20,6 +20,10 @@
     <div>
         <at-the-rate-local-scope ramu="{{atTheRate}}" gettingfromparent2="{{atTheRate}}"></at-the-rate-local-scope>
     </div>
+    <div>
+        <equal-to-local-scope willchange="willchange"></equal-to-local-scope>
+        <!-- no sqigly bracket to pass data to children, also data is passed as-is rathar than implicitly typconverted to string -->
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="./app.js"></script>
     <script src="./controllers/sharedscope.js"></script>
