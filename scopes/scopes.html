@@ -9,9 +9,17 @@
 </head>
 
 <body ng-controller="scopecontroller">
-    <sharedscope></sharedscope>
     <h2>This is Scopes</h2>
-    <isolatedscopes></isolatedscopes>
+    <div>
+        <sharedscope></sharedscope>
+    </div>
+    <div>
+        <isolatedscopes></isolatedscopes>
+    </div>
+    <h2>Local Scopes:</h2>
+    <div>
+        <at-the-rate-local-scope ramu="{{atTheRate}}" gettingfromparent2="{{atTheRate}}"></at-the-rate-local-scope>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="./app.js"></script>
     <script src="./controllers/sharedscope.js"></script>
