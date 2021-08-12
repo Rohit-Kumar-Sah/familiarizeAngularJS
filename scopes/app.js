@@ -38,5 +38,19 @@
                 template: "<p> Hey this is & local scope</p> <button ng-click='somefunction()'>Click here to execute funtion from parent.</button>"
             }
         });
+        angular.module('scopesapp').directive('linkFunction', function() {
+            return {
+
+                restrict: 'A',
+                link: function(scope, ele, attr) {
+                    console.log('ele', ele[0]);
+                    ele[0].style.backgroundColor = "green";
+                    ele[0].addEventListener('mouseenter', function() { this.style.backgroundColor = "pink"; });
+                    ele[0].addEventListener('mouseleave', function() { this.style.backgroundColor = "green"; });
+                    ele[0].addEventListener('click', function() { this.innerText = "Text Updated via link function"; });
+
+                }
+            }
+        });
     }
 )();
