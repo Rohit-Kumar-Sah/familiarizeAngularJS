@@ -30,5 +30,13 @@
                 template: "<p > local scope \"=\" : {{willchange}}.</p><button ng-click=\"willchange='overridden by child'\">Click to let child override itself and parent too</button>"
             }
         });
+        angular.module('scopesapp').directive('ampersandLocalScope', function() {
+            return {
+                scope: {
+                    somefunction: '&'
+                },
+                template: "<p> Hey this is & local scope</p> <button ng-click='somefunction()'>Click here to execute funtion from parent.</button>"
+            }
+        });
     }
 )();
